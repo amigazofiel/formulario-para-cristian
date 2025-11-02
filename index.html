@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles para la Venta - Carnicería [Nombre del Negocio]</title>
+    <style>
+        /* Estilos CSS para una apariencia limpia y profesional */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d32f2f; /* Un rojo cálido, asociado a la carne */
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        p.intro {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        /* Estilo para la presentación empática de Cristian */
+        blockquote {
+            background: #fffafa; /* Fondo claro para el bloque de cita */
+            border-left: 5px solid #d32f2f;
+            margin: 1.5em 10px;
+            padding: 1em 20px;
+            quotes: "\201C""\201D""\2018""\2019";
+            font-style: italic;
+            color: #555;
+        }
+        blockquote p {
+            display: inline;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            margin-top: 15px;
+        }
+        input[type="text"], input[type="number"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+            border-color: #d32f2f;
+            outline: none;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #a50e0e;
+        }
+        .note {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #6a4a00;
+        }
+        .required::after {
+            content: ' *';
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Detalles para la Venta de su Carnicería 🥩</h1>
+
+    <blockquote>
+        <p>
+            **Hola, Cristian.** Quiero agradecerte la confianza que depositaste en mí para ayudarte con la venta de tu carnicería. Sé que este negocio es el fruto de **mucho esfuerzo y dedicación**.
+            <br><br>
+            Mi objetivo es que sientas que la venta de tu negocio está en **manos de un profesional que valora tu trabajo** y que sabe cómo presentar esta oportunidad a los inversores adecuados.
+            <br><br>
+            Para lograr una venta eficiente y profesional, he diseñado esta página especial para vos. Por favor, completa el formulario a continuación con toda la información detallada que puedas, a tu ritmo y en tus tiempos libres.
+            <br><br>
+            Con estos datos, podremos **acelerar la venta**, **validar la rentabilidad** y **destacar el gran valor** que has construido. ¡Estamos en contacto y muchas gracias por tu colaboración!
+        </p>
+    </blockquote>
+    <form action="#" method="POST">
+        <h2>I. Información General del Negocio</h2>
+        
+        <label for="nombre_carniceria" class="required">Nombre de la Carnicería:</label>
+        <input type="text" id="nombre_carniceria" name="nombre_carniceria" required>
+
+        <label for="antiguedad" class="required">Antigüedad del negocio en esta ubicación (en Años):</label>
+        <input type="number" id="antiguedad" name="antiguedad" min="1" required>
+
+        <label for="direccion" class="required">Dirección completa (Calle, Altura, Ciudad, Barrio):</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="motivo_venta" class="required">Motivo de la Venta (Ser específico, Ej: Cambio de Rubro, Jubilación):</label>
+        <input type="text" id="motivo_venta" name="motivo_venta" required>
+
+        <label for="precio_venta" class="required">Precio de Venta Solicitado (ARS o USD):</label>
+        <input type="text" id="precio_venta" name="precio_venta" placeholder="Ej: ARS $3.500.000 o USD 10.000" required>
+
+        <label for="dias_horarios">Días y horarios de atención actuales:</label>
+        <input type="text" id="dias_horarios" name="dias_horarios" placeholder="Ej: Lunes a Sábados de 8:30 a 13:00 y 16:30 a 20:30">
+
+        <label for="deudas">¿Tiene deudas o pasivos pendientes relacionados con el negocio? (Aclarar monto y tipo)</label>
+        <textarea id="deudas" name="deudas" placeholder="Ej: No / Sí, $X de AFIP y $Y con Proveedor Z"></textarea>
+
+        <h2>II. Información del Local y Contrato de Alquiler</h2>
+
+        <label for="tipo_local" class="required">¿El local es propio o alquilado?</label>
+        <select id="tipo_local" name="tipo_local" required>
+            <option value="">Seleccione una opción</option>
+            <option value="Propio">Propio</option>
+            <option value="Alquilado">Alquilado</option>
+        </select>
+        
+        <label for="alquiler_monto">Si es alquilado: Monto actual del alquiler (mensual, en ARS):</label>
+        <input type="text" id="alquiler_monto" name="alquiler_monto" placeholder="ARS $">
+        
+        <label for="alquiler_fin">Si es alquilado: Fecha de finalización del contrato actual:</label>
+        <input type="text" id="alquiler_fin" name="alquiler_fin" placeholder="Ej: 01/10/2027">
+
+        <label for="alquiler_nuevo">Si es alquilado: ¿El propietario está dispuesto a realizar un nuevo contrato con el comprador?</label>
+        <select id="alquiler_nuevo" name="alquiler_nuevo">
+            <option value="">Seleccione una opción</option>
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+            <option value="No_consultado">Aún no se consultó</option>
+        </select>
+        
+        <label for="metros">Metros Cuadrados Totales del Local (Aproximados):</label>
+        <input type="text" id="metros" name="metros" placeholder="Ej: 60 m2">
+
+        <label for="estado_local">Estado general del local:</label>
+        <input type="text" id="estado_local" name="estado_local" placeholder="Ej: Muy bueno, con mantenimiento reciente">
+
+        <label for="servicios">Comodidades del local (separar por coma):</label>
+        <input type="text" id="servicios" name="servicios" placeholder="Ej: Baño para personal, Depósito amplio, Espacio para descarga">
+
+        <h2>III. Habilitaciones y Permisos</h2>
+
+        <label for="habilitacion_muni" class="required">¿Tiene la Habilitación Municipal al día para el rubro carnicería?</label>
+        <select id="habilitacion_muni" name="habilitacion_muni" required>
+            <option value="">Seleccione una opción</option>
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+        </select>
+        
+        <label for="inscripcion_fiscal">Inscripción Fiscal (Responsable Inscripto o Monotributo):</label>
+        <input type="text" id="inscripcion_fiscal" name="inscripcion_fiscal" placeholder="Ej: Monotributo / Responsable Inscripto">
+        
+        <label for="permisos_bromato">¿Tiene libreta sanitaria y permisos bromatológicos al día?</label>
+        <select id="permisos_bromato" name="permisos_bromato">
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+        </select>
+
+        <h2>IV. Detalle del Inventario e Instalaciones</h2>
+        <p>Por favor, detalle el equipo principal que se incluye en la venta. Si un campo no aplica o no está incluido, déjelo vacío.</p>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Equipo / Instalación</th>
+                        <th>Cantidad</th>
+                        <th>Marca y Modelo</th>
+                        <th>Estado (1-10)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cámara Frigorífica Grande (Cuarto Frío)</td>
+                        <td><input type="number" name="cant_camara_grande" min="0"></td>
+                        <td><input type="text" name="marca_camara_grande"></td>
+                        <td><input type="number" name="estado_camara_grande" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Cámara Frigorífica Exhibidora (Mostrador)</td>
+                        <td><input type="number" name="cant_mostrador" min="0"></td>
+                        <td><input type="text" name="marca_mostrador"></td>
+                        <td><input type="number" name="estado_mostrador" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Sierra Carnicera (eléctrica)</td>
+                        <td><input type="number" name="cant_sierra" min="0"></td>
+                        <td><input type="text" name="marca_sierra"></td>
+                        <td><input type="number" name="estado_sierra" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Máquina de Picado de Carne (moledora)</td>
+                        <td><input type="number" name="cant_picadora" min="0"></td>
+                        <td><input type="text" name="marca_picadora"></td>
+                        <td><input type="number" name="estado_picadora" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Balanza Electrónica</td>
+                        <td><input type="number" name="cant_balanza" min="0"></td>
+                        <td><input type="text" name="marca_balanza"></td>
+                        <td><input type="number" name="estado_balanza" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Mesadas de Acero Inoxidable (metraje aprox.)</td>
+                        <td><input type="text" name="cant_mesadas" placeholder="Ej: 5 mts"></td>
+                        <td><input type="text" name="marca_mesadas" placeholder="N/A"></td>
+                        <td><input type="number" name="estado_mesadas" min="1" max="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Otros Elementos Destacables (Describir)</td>
+                        <td colspan="3"><input type="text" name="otros_equipos" placeholder="Ej: 1 Cortadora de Fiambres Slicer, 2 Freezers verticales, Sistema POS, Aire Acondicionado 5000fg"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>V. Aspectos Financieros y Comerciales</h2>
+
+        <div class="note">
+            **Nota de Confidencialidad:** Estos datos son fundamentales para atraer inversores. Serán manejados con estricta confidencialidad y solo se compartirán con compradores serios.
+        </div>
+
+        <label for="facturacion_bruta" class="required">Promedio de Facturación Bruta Mensual (Últimos 6 meses):</label>
+        <input type="text" id="facturacion_bruta" name="facturacion_bruta" placeholder="ARS $ (Monto promedio)">
+
+        <label for="ganancia_neta">Ganancia Neta Promedio Mensual (Estimada):</label>
+        <input type="text" id="ganancia_neta" name="ganancia_neta" placeholder="ARS $ (Monto promedio)">
+
+        <label for="clientes_diarios">Promedio de Clientes Diarios (Aproximado):</label>
+        <input type="number" id="clientes_diarios" name="clientes_diarios" min="1">
+
+        <label for="empleados">¿Cuántos empleados tiene actualmente el negocio?</label>
+        <input type="number" id="empleados" name="empleados" min="0">
+
+        <label for="proveedores_principales">Principales Proveedores (Mencionar 2 o 3 y si la relación es transferible):</label>
+        <textarea id="proveedores_principales" name="proveedores_principales" placeholder="Ej: Frigorífico X (si, transferible), Distribuidor Y (no, es personal)"></textarea>
+        
+        <label for="punto_fuerte" class="required">Punto Fuerte del Negocio (¿Qué es lo que más lo destaca?):</label>
+        <textarea id="punto_fuerte" name="punto_fuerte" required placeholder="Ej: Calidad de la mercadería, Excelente ubicación de paso, Gran volumen de venta en fin de semana"></textarea>
+        
+        <label for="potencial_crecimiento">Potencial de Crecimiento (¿Qué se podría mejorar o agregar?):</label>
+        <textarea id="potencial_crecimiento" name="potencial_crecimiento" placeholder="Ej: Agregar delivery o venta online, sumar productos de almacén gourmet, desarrollar línea de embutidos propios"></textarea>
+
+        <label for="transicion">¿Estaría dispuesto a quedarse un tiempo (ej: 1 o 2 semanas) para hacer una transición/capacitación al nuevo dueño?</label>
+        <select id="transicion" name="transicion">
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+            <option value="Negociable">Negociable</option>
+        </select>
+
+        <button type="submit" class="submit-button">Enviar Información y Continuar con el Proceso</button>
+    </form>
+</div>
+
+</body>
+</html>
