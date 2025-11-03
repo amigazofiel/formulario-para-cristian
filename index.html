@@ -3,301 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles para la Venta - Carnicería [Nombre del Negocio]</title>
+    <title>Formulario de Inventario - Venta de Carnicería</title>
     <style>
-        /* Estilos CSS para una apariencia limpia y profesional */
+        /* Estilos CSS simplificados y modernos */
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Fondo muy claro */
+            color: #343a40;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 40px auto;
             background-color: #ffffff;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
         h1 {
-            color: #d32f2f; /* Un rojo cálido, asociado a la carne */
+            color: #a52a2a; /* Marrón para carnicería */
             text-align: center;
-            margin-bottom: 5px;
-            font-size: 32px;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
         h2 {
-            color: #555;
-            border-bottom: 2px solid #eee;
+            color: #495057;
+            border-bottom: 1px solid #dee2e6;
             padding-bottom: 8px;
             margin-top: 30px;
-            font-size: 22px;
+            font-size: 20px;
         }
-        p.intro {
-            text-align: center;
-            font-size: 16px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-        /* Estilo para la presentación empática de Cristian */
+        /* Estilo para la presentación de Cristian */
         blockquote {
-            background: #fffafa; /* Fondo claro para el bloque de cita */
-            border-left: 5px solid #d32f2f;
-            margin: 1.5em 10px;
-            padding: 1em 20px;
-            quotes: "\201C""\201D""\2018""\2019";
+            background: #e9ecef;
+            border-left: 5px solid #a52a2a;
+            margin: 1.5em 0;
+            padding: 15px;
             font-style: italic;
-            color: #555;
-        }
-        blockquote p {
-            display: inline;
+            color: #495057;
+            border-radius: 5px;
         }
         
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #444;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #495057;
             margin-top: 15px;
         }
-        input[type="text"], input[type="number"], input[type="email"], textarea, select {
+        input[type="text"], textarea {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
             box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-        input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
-            border-color: #d32f2f;
-            outline: none;
         }
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
-        .table-responsive {
-            overflow-x: auto;
+
+        /* Estilos para la lista de inventario */
+        .inventory-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #f1f1f1;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+        .inventory-item:last-child {
+            border-bottom: none;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-            vertical-align: middle;
+        .item-name {
+            flex-basis: 35%;
+            font-weight: 600;
         }
-        th {
-            background-color: #f2f2f2;
-            color: #333;
+        .item-details {
+            flex-basis: 60%;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
+        .item-details input[type="text"], .item-details input[type="number"], .item-details select {
+            width: auto;
+            flex-grow: 1;
+            padding: 6px;
+            margin-bottom: 0;
+        }
+        .small-input {
+            max-width: 80px;
+        }
+        .checkbox-label {
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .checkbox-label input {
+             margin-right: 5px;
+        }
+
+        /* Botón de envío */
         .submit-button {
             display: block;
             width: 100%;
             padding: 15px;
-            background-color: #d32f2f;
+            background-color: #a52a2a;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 18px;
             cursor: pointer;
             margin-top: 30px;
             transition: background-color 0.3s;
         }
         .submit-button:hover {
-            background-color: #a50e0e;
-        }
-        .note {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #6a4a00;
+            background-color: #8b0000;
         }
         .required::after {
             content: ' *';
-            color: #d32f2f;
+            color: #a52a2a;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Detalles necesarios para la Venta de tu Carnicería 🥩</h1>
+    <h1>Recolección de Datos: Venta de Carnicería</h1>
 
     <blockquote>
         <p>
-            Hola, Cristian.   
+            **Detalles necesarios para la Venta de tu Carnicería**
             <br><br>
-            En primer lugar quiero agradecerte la confianza que depositaste en mí cuando lo necesite. En segundo lugar, esta oportunidad que me das para ayudarte con la venta de tu carnicería.
+            Hola, Cristian.
+            <br>
+            En primer lugar, quiero agradecerte la confianza que depositaste en mí cuando lo necesité. En segundo lugar, esta oportunidad que me das para ayudarte con la venta de tu carnicería.
             <br><br>
-            Diseñe esta página especialmente para vos. Por favor, completa el formulario a continuación con toda la información detallada que puedas, a tu ritmo y en tus tiempos libres. Si no sabes responder algo o simplemente por cuestión personal decidis no hacerlo, completa ese lugar con la palabra "No sé".
+            Diseñé esta página especialmente para vos. Por favor, completa el formulario a continuación con toda la información detallada que puedas, a tu ritmo y en tus tiempos libres. Si no sabes responder algo o simplemente por cuestión personal decidís no hacerlo, completa ese lugar con la palabra **(No sé)**.
             <br><br>
             Con estos datos, puedo comenzar a trabajar. ¡Estamos en contacto y muchas gracias por tu colaboración!
         </p>
     </blockquote>
     <form action="#" method="POST">
-        <h2>I. Información General del Negocio</h2>
-
-        <label for="precio_venta" class="required">Precio de Venta Solicitado (ARS o USD):</label>
-        <input type="text" id="precio_venta" name="precio_venta" placeholder="Ej: ARS $3.500.000 o USD 10.000" required>
-
-        <label for="dias_horarios">Días y horarios de atención actuales:</label>
-        <input type="text" id="dias_horarios" name="dias_horarios" placeholder="Ej: Lunes a Sábados de 8:30 a 13:00 y 16:30 a 20:30">
-
-        <label for="deudas">¿Tiene deudas o pasivos pendientes relacionados con el negocio? (Aclarar monto y tipo)</label>
-        <textarea id="deudas" name="deudas" placeholder="Ej: No / Sí, $X de AFIP y $Y con Proveedor Z"></textarea>
-
-        <h2>II. Información del Local y Contrato de Alquiler</h2>
-
-        <label for="tipo_local" class="required">¿El local es propio o alquilado?</label>
-        <select id="tipo_local" name="tipo_local" required>
-            <option value="">Seleccione una opción</option>
-            <option value="Propio">Propio</option>
-            <option value="Alquilado">Alquilado</option>
-        </select>
+        <h2>I. Información Clave y Precio Solicitado</h2>
         
-        <label for="alquiler_monto">Si es alquilado: Monto actual del alquiler (mensual, en ARS):</label>
-        <input type="text" id="alquiler_monto" name="alquiler_monto" placeholder="ARS $">
+        <label for="precio_venta" class="required">Precio de Venta Solicitado (Monto que pide):</label>
+        <input type="text" id="precio_venta" name="precio_venta" placeholder="Ej: ARS $4.000.000 / USD 12.000" required>
         
-        <label for="alquiler_fin">Si es alquilado: Fecha de finalización del contrato actual:</label>
-        <input type="text" id="alquiler_fin" name="alquiler_fin" placeholder="Ej: 01/10/2027">
+        <label for="nombre_carniceria">Nombre de la Carnicería / Ciudad y Barrio:</label>
+        <input type="text" id="nombre_carniceria" name="nombre_carniceria" placeholder="Ej: Carnicería El Novillo de Oro - Córdoba, Barrio Centro">
 
-        <label for="alquiler_nuevo">Si es alquilado: ¿El propietario está dispuesto a realizar un nuevo contrato con el comprador?</label>
-        <select id="alquiler_nuevo" name="alquiler_nuevo">
-            <option value="">Seleccione una opción</option>
-            <option value="Si">Sí</option>
-            <option value="No">No</option>
-            <option value="No_consultado">Aún no se consultó</option>
-        </select>
-        
-        <label for="metros">Metros Cuadrados Totales del Local (Aproximados):</label>
-        <input type="text" id="metros" name="metros" placeholder="Ej: 60 m2">
+        <h2>II. Inventario y Equipamiento Principal</h2>
+        <p>Marque la casilla si el equipo **está incluido en la venta** y complete sus detalles.</p>
 
-        <label for="estado_local">Estado general del local:</label>
-        <input type="text" id="estado_local" name="estado_local" placeholder="Ej: Muy bueno, con mantenimiento reciente">
-
-        <label for="servicios">Comodidades del local (separar por coma):</label>
-        <input type="text" id="servicios" name="servicios" placeholder="Ej: Baño para personal, Depósito amplio, Espacio para descarga">
-
-        <h2>III. Habilitaciones y Permisos</h2>
-
-        <label for="habilitacion_muni" class="required">¿Tiene la Habilitación Municipal al día para el rubro carnicería?</label>
-        <select id="habilitacion_muni" name="habilitacion_muni" required>
-            <option value="">Seleccione una opción</option>
-            <option value="Si">Sí</option>
-            <option value="No">No</option>
-        </select>
-        
-        <label for="inscripcion_fiscal">Inscripción Fiscal (Responsable Inscripto o Monotributo):</label>
-        <input type="text" id="inscripcion_fiscal" name="inscripcion_fiscal" placeholder="Ej: Monotributo / Responsable Inscripto">
-        
-        <label for="permisos_bromato">¿Tiene libreta sanitaria y permisos bromatológicos al día?</label>
-        <select id="permisos_bromato" name="permisos_bromato">
-            <option value="Si">Sí</option>
-            <option value="No">No</option>
-        </select>
-
-        <h2>IV. Detalle del Inventario e Instalaciones</h2>
-        <p>Por favor, detalle el equipo principal que se incluye en la venta. Si un campo no aplica o no está incluido, déjelo vacío.</p>
-
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Equipo / Instalación</th>
-                        <th>Cantidad</th>
-                        <th>Marca y Modelo</th>
-                        <th>Estado (1-10)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cámara Frigorífica Grande (Cuarto Frío)</td>
-                        <td><input type="number" name="cant_camara_grande" min="0"></td>
-                        <td><input type="text" name="marca_camara_grande"></td>
-                        <td><input type="number" name="estado_camara_grande" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Cámara Frigorífica Exhibidora (Mostrador)</td>
-                        <td><input type="number" name="cant_mostrador" min="0"></td>
-                        <td><input type="text" name="marca_mostrador"></td>
-                        <td><input type="number" name="estado_mostrador" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Sierra Carnicera (eléctrica)</td>
-                        <td><input type="number" name="cant_sierra" min="0"></td>
-                        <td><input type="text" name="marca_sierra"></td>
-                        <td><input type="number" name="estado_sierra" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Máquina de Picado de Carne (moledora)</td>
-                        <td><input type="number" name="cant_picadora" min="0"></td>
-                        <td><input type="text" name="marca_picadora"></td>
-                        <td><input type="number" name="estado_picadora" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Balanza Electrónica</td>
-                        <td><input type="number" name="cant_balanza" min="0"></td>
-                        <td><input type="text" name="marca_balanza"></td>
-                        <td><input type="number" name="estado_balanza" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Mesadas de Acero Inoxidable (metraje aprox.)</td>
-                        <td><input type="text" name="cant_mesadas" placeholder="Ej: 5 mts"></td>
-                        <td><input type="text" name="marca_mesadas" placeholder="N/A"></td>
-                        <td><input type="number" name="estado_mesadas" min="1" max="10"></td>
-                    </tr>
-                    <tr>
-                        <td>Otros Elementos Destacables (Describir)</td>
-                        <td colspan="3"><input type="text" name="otros_equipos" placeholder="Ej: 1 Cortadora de Fiambres Slicer, 2 Freezers verticales, Sistema POS, Aire Acondicionado 5000fg"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="camara_fria">Cámara Frigorífica / Cuarto de Frío:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="camara_fria" name="camara_fria" value="si">
+                <label for="camara_fria" class="checkbox-label">Incluida</label>
+                <input type="text" name="camara_fria_medidas" placeholder="Medidas aprox. (Ej: 2x3m)">
+                <select name="camara_fria_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Requiere Mant.">Requiere Mant.</option>
+                </select>
+            </div>
         </div>
 
-        <h2>V. Aspectos Financieros y Comerciales</h2>
-
-        <div class="note">
-            **Nota de Confidencialidad:** Estos datos son fundamentales para atraer inversores. Serán manejados con estricta confidencialidad y solo se compartirán con compradores serios.
+        <div class="inventory-item">
+            <div class="item-name"><label for="mostrador_refri">Mostrador Refrigerado / Vitrina Exhibidora:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="mostrador_refri" name="mostrador_refri" value="si">
+                <label for="mostrador_refri" class="checkbox-label">Incluida</label>
+                <input type="number" name="mostrador_refri_cantidad" placeholder="Cant." class="small-input">
+                <input type="text" name="mostrador_refri_medidas" placeholder="Metros (Ej: 3.5m)">
+                <select name="mostrador_refri_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Requiere Mant.">Requiere Mant.</option>
+                </select>
+            </div>
         </div>
 
-        <label for="facturacion_bruta" class="required">Promedio de Facturación Bruta Mensual (Últimos 6 meses):</label>
-        <input type="text" id="facturacion_bruta" name="facturacion_bruta" placeholder="ARS $ (Monto promedio)">
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="mesada_acero">Mesada de Acero Inoxidable:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="mesada_acero" name="mesada_acero" value="si">
+                <label for="mesada_acero" class="checkbox-label">Incluida</label>
+                <input type="text" name="mesada_acero_medidas" placeholder="Medidas total aprox.">
+                <select name="mesada_acero_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
 
-        <label for="ganancia_neta">Ganancia Neta Promedio Mensual (Estimada):</label>
-        <input type="text" id="ganancia_neta" name="ganancia_neta" placeholder="ARS $ (Monto promedio)">
-
-        <label for="clientes_diarios">Promedio de Clientes Diarios (Aproximado):</label>
-        <input type="number" id="clientes_diarios" name="clientes_diarios" min="1">
-
-        <label for="empleados">¿Cuántos empleados tiene actualmente el negocio?</label>
-        <input type="number" id="empleados" name="empleados" min="0">
-
-        <label for="proveedores_principales">Principales Proveedores (Mencionar 2 o 3 y si la relación es transferible):</label>
-        <textarea id="proveedores_principales" name="proveedores_principales" placeholder="Ej: Frigorífico X (si, transferible), Distribuidor Y (no, es personal)"></textarea>
+        <div class="inventory-item">
+            <div class="item-name"><label for="sierra_electrica">Sierra Eléctrica (Cortadora de Huesos):</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="sierra_electrica" name="sierra_electrica" value="si">
+                <label for="sierra_electrica" class="checkbox-label">Incluida</label>
+                <input type="text" name="sierra_electrica_marca" placeholder="Marca (Ej: Slicer)">
+                <select name="sierra_electrica_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
         
-        <label for="punto_fuerte" class="required">Punto Fuerte del Negocio (¿Qué es lo que más lo destaca?):</label>
-        <textarea id="punto_fuerte" name="punto_fuerte" required placeholder="Ej: Calidad de la mercadería, Excelente ubicación de paso, Gran volumen de venta en fin de semana"></textarea>
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="picadora_electrica">Picadora de Carne Eléctrica:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="picadora_electrica" name="picadora_electrica" value="si">
+                <label for="picadora_electrica" class="checkbox-label">Incluida</label>
+                <input type="text" name="picadora_electrica_marca" placeholder="Marca">
+                <select name="picadora_electrica_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="inventory-item">
+            <div class="item-name"><label for="cortadora_fiambres">Cortadora de Fiambres Eléctrica:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="cortadora_fiambres" name="cortadora_fiambres" value="si">
+                <label for="cortadora_fiambres" class="checkbox-label">Incluida</label>
+                <input type="text" name="cortadora_fiambres_marca" placeholder="Marca">
+                <select name="cortadora_fiambres_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
         
-        <label for="potencial_crecimiento">Potencial de Crecimiento (¿Qué se podría mejorar o agregar?):</label>
-        <textarea id="potencial_crecimiento" name="potencial_crecimiento" placeholder="Ej: Agregar delivery o venta online, sumar productos de almacén gourmet, desarrollar línea de embutidos propios"></textarea>
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="ganchos">Ganchos de Acero Inoxidable y Rieles:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="ganchos" name="ganchos" value="si">
+                <label for="ganchos" class="checkbox-label">Incluidos</label>
+                <input type="text" name="ganchos_cantidad" placeholder="Cantidad aprox.">
+                <select name="ganchos_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
 
-        <label for="transicion">¿Estaría dispuesto a quedarse un tiempo (ej: 1 o 2 semanas) para hacer una transición/capacitación al nuevo dueño?</label>
-        <select id="transicion" name="transicion">
-            <option value="Si">Sí</option>
-            <option value="No">No</option>
-            <option value="Negociable">Negociable</option>
-        </select>
+        <div class="inventory-item">
+            <div class="item-name"><label for="pos">Caja Registradora / Sistema Punto de Venta (POS):</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="pos" name="pos" value="si">
+                <label for="pos" class="checkbox-label">Incluido</label>
+                <input type="text" name="pos_detalles" placeholder="Tipo (Ej: Sistema con tablet / Caja antigua)">
+                <select name="pos_estado">
+                    <option value="No sé">Estado</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Buen Estado">Buen Estado</option>
+                    <option value="Usado">Usado</option>
+                </select>
+            </div>
+        </div>
 
-        <button type="submit" class="submit-button">Enviar Información y Continuar con el Proceso</button>
+        <h2>III. Equipamiento Vario y Herramientas</h2>
+
+        <div class="inventory-item">
+            <div class="item-name"><label for="balanza_electronica">Balanza Electrónica (Principal):</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="balanza_electronica" name="balanza_electronica" value="si">
+                <label for="balanza_electronica" class="checkbox-label">Incluida</label>
+                <input type="text" name="balanza_electronica_marca" placeholder="Marca y modelo">
+            </div>
+        </div>
+        
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="freezer">Freezer / Congelador (vertical/horizontal):</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="freezer" name="freezer" value="si">
+                <label for="freezer" class="checkbox-label">Incluido</label>
+                <input type="number" name="freezer_cantidad" placeholder="Cantidad" class="small-input">
+            </div>
+        </div>
+
+        <div class="inventory-item">
+            <div class="item-name"><label for="envasadora_vacio">Envasadora al Vacío:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="envasadora_vacio" name="envasadora_vacio" value="si">
+                <label for="envasadora_vacio" class="checkbox-label">Incluida</label>
+                <input type="text" name="envasadora_vacio_marca" placeholder="Marca">
+            </div>
+        </div>
+        
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="maquina_hamburguesas">Máquina para hacer Hamburguesas / Embutidos:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="maquina_hamburguesas" name="maquina_hamburguesas" value="si">
+                <label for="maquina_hamburguesas" class="checkbox-label">Incluida</label>
+                <input type="text" name="maquina_hamburguesas_detalles" placeholder="Detalles (manual/electrica)">
+            </div>
+        </div>
+
+        <div class="inventory-item">
+            <div class="item-name"><label for="cuchillos">Juego de Cuchillos, Chairas, Machete, Afiladores:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="cuchillos" name="cuchillos" value="si">
+                <label for="cuchillos" class="checkbox-label">Incluido</label>
+                <input type="text" name="cuchillos_detalles" placeholder="Cantidad aprox. de piezas">
+            </div>
+        </div>
+        
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="tablas">Tablas (Madera/Polietileno):</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="tablas" name="tablas" value="si">
+                <label for="tablas" class="checkbox-label">Incluidas</label>
+                <input type="number" name="tablas_cantidad" placeholder="Cantidad total" class="small-input">
+            </div>
+        </div>
+
+        <div class="inventory-item">
+            <div class="item-name"><label for="carteles">Carteles de precios y promociones / Carteles lumínicos:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="carteles" name="carteles" value="si">
+                <label for="carteles" class="checkbox-label">Incluidos</label>
+                <input type="number" name="carteles_cantidad" placeholder="Cantidad aprox.">
+            </div>
+        </div>
+
+        <div class="inventory-item" style="background: #fcfcfc;">
+            <div class="item-name"><label for="vigilancia">Cámaras de Vigilancia / Sistema de Seguridad:</label></div>
+            <div class="item-details">
+                <input type="checkbox" id="vigilancia" name="vigilancia" value="si">
+                <label for="vigilancia" class="checkbox-label">Incluido</label>
+                <input type="number" name="vigilancia_cantidad" placeholder="Cantidad de cámaras" class="small-input">
+            </div>
+        </div>
+
+        <h2>IV. Otros Elementos y Condiciones de Venta</h2>
+
+        <label for="otros_elementos">Espacio para otros Elementos que quiera incluir (Describa):</label>
+        <textarea id="otros_elementos" name="otros_elementos" placeholder="Ej: Carretilla manual, estanterías para mercadería seca, extintores, etc."></textarea>
+        
+        <label for="condiciones_especiales">Condiciones Especiales de Venta (Financiamiento, Permutas, etc.):</label>
+        <textarea id="condiciones_especiales" name="condiciones_especiales" placeholder="Ej: Acepto permuta por vehículo más diferencia a mi favor / Acepto 30% en efectivo y 70% financiado en X cuotas."></textarea>
+
+        <button type="submit" class="submit-button">Enviar Información Detallada</button>
     </form>
 </div>
 
